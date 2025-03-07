@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>        
+    </head>
+    <body>
+    <center>
+        <h1>Student marks</h1>
+        <form action="marks.jsp" method="get">
+            Enter Marks in java:<input type="text" name="java"><br><br>
+            Enter NMA Marks:<input type="text" name="NMA"><br><br>
+            Enter MCAD Marks:<input type="text" name="MCAD"><br><br>
+            Enter PPUD Marks:<input type="text" name="PPUD"><br><br>
+            Enter Project Marks:<input type="text" name="pro"><br><br>
+            <input type="submit">
+        </form>
+    </center>
+    </body>
+</html>
