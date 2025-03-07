@@ -1,3 +1,52 @@
+marks.jsp
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            int java=Integer.parseInt(request.getParameter("java"));
+            int NMA=Integer.parseInt(request.getParameter("NMA"));
+            int MCAD=Integer.parseInt(request.getParameter("MCAD"));
+            int PPUD=Integer.parseInt(request.getParameter("PPUD"));
+            int Project=Integer.parseInt(request.getParameter("pro"));
+            int c=java+NMA+MCAD+PPUD+Project;
+            double avg=c/5;
+            out.println("Your Percentage is:"+avg);
+            %>
+            <br><br>
+            <%
+           if(avg>90)
+            {
+            out.println("your grade is A");
+        }
+        else if(avg>=80){
+        out.println("your grade is b");
+        }
+         else if(avg>=70){
+        out.println("your grade is c");
+        }
+         else if(avg>=60){
+        out.println("your grade is d");
+        }
+        else{
+        out.println("your grade is e");
+        }
+        
+        %>
+    </body>
+</html>
+
+
+
+
+
+
+marks.html
 <html>
     <head>
         <title>TODO supply a title</title>        
