@@ -1,0 +1,78 @@
+newjsp.jsp
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+     <%
+      String ename= request.getParameter("username");
+     int bs=Integer.parseInt(request.getParameter("sal"));
+ if(bs>=10000)
+ {
+ double da=bs*0.3;
+ double hra=bs*0.4;
+ double gs=bs+da+hra;
+ out.println("<h1>Employee Pay Slip</h1>");
+ out.println("<br><h2> Employee Name : "+ename);
+ out.println("<br><h2>Basic Pay : "+bs);
+ out.println("<br><h2>DA : "+da);
+ out.println("<br><h2>HRA : "+hra);
+ out.println("<br> <h2>  Gross Salary: "+gs);
+ }
+ else
+ {
+ response.sendRedirect("newhtml1.html");
+ }     
+%>
+
+    </body>
+</html>
+
+-------------------------------------------------------------------------------------------------------
+   newhtml1.html
+-----------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Salary Information</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+         <form action="newjsp.jsp" method="GET">
+         Enter Employee Name : <input type="text" name="username" size="50" />
+         <br >
+         <br><br>
+        Enter Basic Salary  : <input type="number" name="sal" size="20" />
+        <br>
+        <br><br>
+        <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
+
+
+-------------------------------------------------------------------------------------------------------
+   newhtml2.html
+-----------------------------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> Error Found</h1>
+        <h2>error due to salary less than 10000</h2>
+    </body>
+</html>
+
